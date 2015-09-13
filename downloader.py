@@ -1,5 +1,6 @@
 import time
 import urllib2
+import os.path
 
 class downloader:
   def __init__(self, downloadUrl, episodeTitle, podcastName='podcast'):
@@ -12,6 +13,6 @@ class downloader:
     
   def startDownload(self):
     podcast = urllib2.urlopen(self.downloadUrl)
-    output = open(self.episodeTitle + '.mp3', 'wb')
+    output = open(os.path.join(os.path.expanduser('~'), self.episodeTitle + '.mp3'), 'wb')
     output.write(podcast.read())
     output.close()

@@ -1,3 +1,4 @@
+#!/usr/bin/python
 import sys
 from downloader import downloader
 from podcastparser import podcastparser
